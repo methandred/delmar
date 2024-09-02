@@ -11,11 +11,12 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 100%;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 header {
@@ -23,7 +24,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #c0c0c0;
+    background-color: #C0C0C0;
     color: #fff;
 }
 
