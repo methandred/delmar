@@ -47,7 +47,7 @@ header {
 
 .currency-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
@@ -67,8 +67,12 @@ header {
 .currency-rate {
     font-size: 1.2rem;
     display: flex;
-    justify-content: space-between;
-    width: 150px;
+    justify-content: center;
+    width: auto;
+}
+
+.currency-rate span {
+    margin: 0 5px;
 }
 
 .cross-rate-label, .crypto-label {
