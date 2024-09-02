@@ -71,6 +71,9 @@ header {
     width: auto;
 }
 
+.currency-rate span {
+    margin: 0 5px;
+}
 
 .cross-rate-label, .crypto-label {
     margin: 20px 0 10px;
