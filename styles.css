@@ -16,8 +16,14 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    margin: 0 auto;
+    
+    /* Добавляем фон */
+    background-image: url('fon.png'); /* Указываем путь к изображению */
+    background-size: cover; /* Изображение будет масштабироваться, чтобы покрыть весь контейнер */
+    background-position: center; /* Центрируем изображение по центру контейнера */
+    background-repeat: no-repeat; /* Изображение не будет повторяться */
 }
+
 
 header {
     display: flex;
