@@ -11,8 +11,8 @@ body {
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px; /* можно убрать это ограничение, если нужно на всю ширину */
+    width: 80%;
+    max-width: 600px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -43,9 +43,6 @@ header {
 
 .currency-list {
     padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Три колонки */
-    gap: 15px;
 }
 
 .currency-item {
@@ -79,5 +76,4 @@ header {
     font-size: 1.2rem;
     text-align: center;
     font-weight: bold;
-    grid-column: 1 / -1; /* Растягиваем на всю ширину контейнера */
 }
