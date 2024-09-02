@@ -1,53 +1,79 @@
+/* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+.container {
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    overflow: hidden;
+}
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 600px;
-}
-
-.header img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.header a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.rate-card {
-    background-color: white;
-    border-radius: 10px;
     padding: 20px;
-    margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
+    background-color: #003366;
+    color: #fff;
+}
+
+.exchange-name {
+    font-size: 1.5rem;
+}
+
+.qr-code img {
+    width: 100px;
+    height: 100px;
+}
+
+.buy-sell {
+    font-size: 1.2rem;
+}
+
+.currency-list {
+    padding: 20px;
+}
+
+.currency-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
 }
 
-.rate-card img {
+.currency-item img {
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
 }
 
-.rate-card span {
+.currency-name {
+    font-size: 1.2rem;
+    flex: 1;
+}
+
+.currency-rate {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.cross-rate-label, .crypto-label {
+    margin: 20px 0 10px;
+    font-size: 1.2rem;
+    text-align: center;
     font-weight: bold;
 }
