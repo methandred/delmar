@@ -21,7 +21,7 @@ function fetchRates() {
         eurSell: "45.87",
         usdEur: "1.112",
         eurUsd: "1.104",
-        btcRate: "58000"
+        btcRate: "59000"
     };
     
     // Call update function with new data
