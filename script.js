@@ -1,26 +1,35 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const ratesContainer = document.getElementById("rates-container");
+// script.js
 
-    const rates = [
-        { flag: "🇺🇸", name: "USD", value: "41,30 х 41,45" },
-        { flag: "🇪🇺", name: "EUR", value: "45,70 х 45,85" },
-        { flag: "🇺🇸🇪🇺", name: "USD/EUR", value: "1.110" },
-        { flag: "🇪🇺🇺🇸", name: "EUR/USD", value: "1.103" },
-        { flag: "🥇", name: "BTC", value: "57551 USDT" },
-    ];
+// Function to update currency rates
+function updateRates(data) {
+    document.getElementById('usd-buy').innerText = data.usdBuy;
+    document.getElementById('usd-sell').innerText = data.usdSell;
+    document.getElementById('eur-buy').innerText = data.eurBuy;
+    document.getElementById('eur-sell').innerText = data.eurSell;
+    document.getElementById('usd-eur').innerText = data.usdEur;
+    document.getElementById('eur-usd').innerText = data.eurUsd;
+    document.getElementById('btc-rate').innerText = data.btcRate;
+}
 
-    rates.forEach(rate => {
-        const rateCard = document.createElement("div");
-        rateCard.className = "rate-card";
+// Example function to simulate API call
+function fetchRates() {
+    // Simulated API response
+    const apiResponse = {
+        usdBuy: "41.32",
+        usdSell: "41.47",
+        eurBuy: "45.72",
+        eurSell: "45.87",
+        usdEur: "1.112",
+        eurUsd: "1.104",
+        btcRate: "58000"
+    };
+    
+    // Call update function with new data
+    updateRates(apiResponse);
+}
 
-        const flagSpan = document.createElement("span");
-        flagSpan.textContent = rate.flag + " " + rate.name;
+// Fetch rates every 10 seconds (you can change this as needed)
+setInterval(fetchRates, 10000);
 
-        const valueSpan = document.createElement("span");
-        valueSpan.textContent = rate.value;
-
-        rateCard.appendChild(flagSpan);
-        rateCard.appendChild(valueSpan);
-        ratesContainer.appendChild(rateCard);
-    });
-});
+// Initial fetch to populate the data immediately
+fetchRates();
