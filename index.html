@@ -1,22 +1,62 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test - Курс валют</title>
+    <title>Обмін валют</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <div>
-            <img src="logo.png" alt="Logo">
-            <span>Test</span>
-        </div>
-        <a href="https://t.me/yourchannel" target="_blank">Перейти в канал</a>
-    </div>
+    <div class="container">
+        <header>
+            <div class="exchange-name">Пункт обміну валют</div>
+            <div class="qr-code">
+                <img src="qr-placeholder.png" alt="QR Code" />
+            </div>
+            <div class="buy-sell">
+                <span>Покупка</span> | <span>Продаж</span>
+            </div>
+        </header>
 
-    <div id="rates-container">
-        <!-- Курс валют будет добавлен здесь с помощью JavaScript -->
+        <div class="currency-list">
+            <div class="currency-item">
+                <img src="usd.png" alt="USD">
+                <div class="currency-name">USD</div>
+                <div class="currency-rate">
+                    <span class="buy-rate" id="usd-buy">41.30</span>
+                    <span class="sell-rate" id="usd-sell">41.45</span>
+                </div>
+            </div>
+            <div class="currency-item">
+                <img src="eur.png" alt="EUR">
+                <div class="currency-name">EUR</div>
+                <div class="currency-rate">
+                    <span class="buy-rate" id="eur-buy">45.70</span>
+                    <span class="sell-rate" id="eur-sell">45.85</span>
+                </div>
+            </div>
+            <div class="cross-rate-label">Крос курс</div>
+            <div class="currency-item">
+                <div class="currency-name">USD/EUR</div>
+                <div class="currency-rate">
+                    <span class="cross-rate" id="usd-eur">1.110</span>
+                </div>
+            </div>
+            <div class="currency-item">
+                <div class="currency-name">EUR/USD</div>
+                <div class="currency-rate">
+                    <span class="cross-rate" id="eur-usd">1.103</span>
+                </div>
+            </div>
+            <div class="crypto-label">Криптовалюта</div>
+            <div class="currency-item">
+                <img src="btc.png" alt="BTC">
+                <div class="currency-name">BTC</div>
+                <div class="currency-rate">
+                    <span class="btc-rate" id="btc-rate">57551</span> USDT
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
