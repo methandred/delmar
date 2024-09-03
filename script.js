@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Устанавливаем фон контейнера с изображением и градиентом
         document.getElementById('container').style.background = `
-            linear-gradient(to bottom, ${color1}, ${color2}),
-            url('fon.png') center center no-repeat
+        url('fon.png') center center no-repeat,
+            linear-gradient(to bottom, ${color1}, ${color2})
         `;
         document.getElementById('container').style.backgroundSize = 'auto, cover';
     };
