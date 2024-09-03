@@ -36,7 +36,7 @@ fetchRates();
 
 document.addEventListener('DOMContentLoaded', function () {
     const img = new Image();
-    img.src = 'fon.png'; // Путь к вашему изображению
+    img.src = 'fon.png'; // Убедитесь, что путь к вашему изображению правильный
     img.crossOrigin = 'Anonymous'; 
 
     img.onload = function () {
@@ -46,35 +46,37 @@ document.addEventListener('DOMContentLoaded', function () {
         canvas.height = img.height;
         ctx.drawImage(img, 0, 0);
 
-        // Функция для получения среднего цвета области изображения
-        function getAverageColor(y, height) {
-            const imageData = ctx.getImageData(0, y, img.width, height).data;
-            let r = 0, g = 0, b = 0;
+        const sections = 10; // Разбиваем изображение на 10 секций по высоте для анализа цветов
+        const gradientColors = [];
 
-            for (let i = 0; i < imageData.length; i += 4) {
-                r += imageData[i];
-                g += imageData[i + 1];
-                b += imageData[i + 2];
+        for (let i = 0; i < sections; i++) {
+            const sectionHeight = img.height / sections;
+            const yPosition = i * sectionHeight;
+            const imageData = ctx.getImageData(0, yPosition, img.width, sectionHeight).data;
+
+            let r = 0, g = 0, b = 0;
+            const pixelCount = imageData.length / 4;
+
+            for (let j = 0; j < imageData.length; j += 4) {
+                r += imageData[j];
+                g += imageData[j + 1];
+                b += imageData[j + 2];
             }
 
-            r = Math.floor(r / (imageData.length / 4));
-            g = Math.floor(g / (imageData.length / 4));
-            b = Math.floor(b / (imageData.length / 4));
+            r = Math.floor(r / pixelCount);
+            g = Math.floor(g / pixelCount);
+            b = Math.floor(b / pixelCount);
 
-            return `rgb(${r}, ${g}, ${b})`;
+            gradientColors.push(`rgb(${r}, ${g}, ${b})`);
         }
 
-        // Получаем цвета с верхней и нижней части изображения
-        const topColor = getAverageColor(0, 10); // Верхняя часть
-        const bottomColor = getAverageColor(img.height - 10, 10); // Нижняя часть
-
-        // Создаем плавный градиент
-        const gradient = `linear-gradient(to bottom, ${topColor}, ${bottomColor})`;
+        // Создаем градиент на основе цветов из всех секций
+        const gradient = `linear-gradient(to bottom, ${gradientColors.join(', ')})`;
 
         // Устанавливаем фон контейнера с изображением и градиентом
         document.getElementById('container').style.background = `
-            url('fon.png') center center no-repeat,
-            ${gradient}
+            ${gradient},
+            url('fon.png') center center no-repeat
         `;
         document.getElementById('container').style.backgroundSize = 'auto, contain';
     };
