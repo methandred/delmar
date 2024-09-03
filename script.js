@@ -36,25 +36,32 @@ fetchRates();
 
 document.addEventListener('DOMContentLoaded', function () {
     const img = new Image();
-    img.src = 'fon.png'; // Убедитесь, что этот путь правильный
-    img.crossOrigin = 'Anonymous';
+    img.src = 'fon.png'; // Путь к вашему изображению
+    img.crossOrigin = 'Anonymous'; 
 
     img.onload = function () {
-        const colorThief = new ColorThief();
-        const palette = colorThief.getPalette(img, 12); // Получаем палитру с 12 цветами
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
 
-        // Используем 12 цветов для создания градиента
-        const gradientColors = palette.map(color => `rgb(${color.join(',')})`);
+        // Берем цвет сверху и снизу изображения
+        const topColorData = ctx.getImageData(0, 0, 1, 1).data;
+        const bottomColorData = ctx.getImageData(0, img.height - 1, 1, 1).data;
 
-        // Создаем градиент с множеством цветовых переходов
-        const gradient = `linear-gradient(to bottom, ${gradientColors.join(', ')})`;
+        const topColor = `rgb(${topColorData[0]}, ${topColorData[1]}, ${topColorData[2]})`;
+        const bottomColor = `rgb(${bottomColorData[0]}, ${bottomColorData[1]}, ${bottomColorData[2]})`;
+
+        // Создаем градиент от верхнего цвета к нижнему
+        const gradient = `linear-gradient(to bottom, ${topColor}, ${bottomColor})`;
 
         // Устанавливаем фон контейнера с изображением и градиентом
         document.getElementById('container').style.background = `
         url('fon.png') center center no-repeat,
             ${gradient}
         `;
-        document.getElementById('container').style.backgroundSize = 'auto, cover';
+        document.getElementById('container').style.backgroundSize = 'auto, contain';
     };
 
     img.onerror = function() {
