@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Устанавливаем фон для контейнера
         document.getElementById('container').style.background = `
-           url('fon.png') center center no-repeat, ${leftGradient}, ${rightGradient}
+           ${leftGradient}, url('fon.png') center center no-repeat, ${rightGradient}
         `;
-        document.getElementById('container').style.backgroundSize = 'auto, contain';
+        document.getElementById('container').style.backgroundSize = 'auto, contain, auto';
         document.getElementById('container').style.backgroundBlendMode = 'normal';
     };
 
