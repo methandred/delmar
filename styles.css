@@ -41,6 +41,10 @@ header {
     width: 100px;
     height: 100px;
 }
+.logo img {
+    width: 100px;
+    height: 100px;
+}
 
 .buy-sell {
     font-size: 1.2rem;
