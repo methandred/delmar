@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     font-family: 'Times New Roman', sans-serif;
     background-color: #f4f4f4;
@@ -13,13 +12,11 @@ body {
 .container {
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #ffffff;
+    background: url('fon.png') center center no-repeat, rgba(255, 255, 255, 0.7);
+    background-size: cover, auto;
+    background-blur: 30px;
+    position: relative;
 }
-
-
 
 header {
     display: flex;
