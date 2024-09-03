@@ -35,7 +35,7 @@ fetchRates();
 // Apply background styles when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
     const img = new Image();
-    img.src = 'fon.png'; // Ensure this path is correct
+    img.src = 'fon.png'; // Убедитесь, что путь к вашему изображению правильный
     img.crossOrigin = 'Anonymous';
 
     img.onload = function () {
@@ -45,21 +45,29 @@ document.addEventListener('DOMContentLoaded', function () {
         canvas.height = img.height;
         ctx.drawImage(img, 0, 0);
 
-        // Create a blurred version of the image
-        const blurredCanvas = document.createElement('canvas');
-        const blurredCtx = blurredCanvas.getContext('2d');
-        blurredCanvas.width = img.width;
-        blurredCanvas.height = img.height;
-        blurredCtx.drawImage(img, 0, 0);
-        blurredCtx.filter = 'blur(30px)';
-        blurredCtx.drawImage(img, 0, 0);
+        const leftColors = [];
+        const rightColors = [];
 
-        // Set the background of the container
-        document.getElementById('container').style.backgroundImage = `
-            url(${canvas.toDataURL()}),
-            url(${blurredCanvas.toDataURL()})
+        for (let y = 0; y < img.height; y++) {
+            // Получаем цветовые данные для каждого пикселя по левому и правому краю
+            const leftPixel = ctx.getImageData(0, y, 1, 1).data;
+            const rightPixel = ctx.getImageData(img.width - 1, y, 1, 1).data;
+
+            // Преобразуем данные в формат RGB
+            leftColors.push(`rgb(${leftPixel[0]}, ${leftPixel[1]}, ${leftPixel[2]})`);
+            rightColors.push(`rgb(${rightPixel[0]}, ${rightPixel[1]}, ${rightPixel[2]})`);
+        }
+
+        // Создаем плавный градиент на основе полученных данных
+        const leftGradient = `linear-gradient(to right, ${leftColors.join(', ')})`;
+        const rightGradient = `linear-gradient(to left, ${rightColors.join(', ')})`;
+
+        // Устанавливаем фон для контейнера
+        document.getElementById('container').style.background = `
+           url('image.png') center center no-repeat, ${leftGradient}, ${rightGradient}
         `;
-        document.getElementById('container').style.backgroundSize = 'cover, cover';
+        document.getElementById('container').style.backgroundSize = 'auto, contain';
+        document.getElementById('container').style.backgroundBlendMode = 'normal';
     };
 
     img.onerror = function () {
