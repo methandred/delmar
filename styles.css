@@ -12,7 +12,7 @@ body {
 .container {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom, #D3D3D3, #808080); /* Градиентный фон от светлого к более темному */
+    background: linear-gradient(to bottom, #171616, #0f0f0f); /* Градиентный фон от светлого к более темному */
     display: flex;
     flex-direction: column;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Легкая внутренняя тень для глубины */
@@ -23,7 +23,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(to bottom, #A9A9A9, #696969); /* Градиентный фон шапки */
+    background: linear-gradient(to bottom, #171616, #0f0f0f); /* Градиентный фон шапки */
     color: #fff;
     position: relative;
 }
