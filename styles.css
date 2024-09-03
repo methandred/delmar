@@ -12,10 +12,12 @@ body {
 .container {
     width: 100%;
     height: 100vh;
-    background: url('fon.png') center center no-repeat, rgba(255, 255, 255, 0.7);
-    background-size: cover, auto;
-    background-blur: 30px;
-    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    filter: blur(30%); /* Размытие на 30% */
+    background-image: url('image.png');
 }
 
 header {
