@@ -15,11 +15,11 @@ function fetchRates() {
     const apiResponse = {
         usdBuy: "41.32",
         usdSell: "41.47",
-        eurBuy: "45.72",
+        eurBuy: "42.72",
         eurSell: "45.87",
         usdEur: "1.112",
         eurUsd: "1.104",
-        btcRate: "59000"
+        btcRate: "5555000"
     };
     
     // Call update function with new data
