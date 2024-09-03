@@ -46,19 +46,34 @@ document.addEventListener('DOMContentLoaded', function () {
         canvas.height = img.height;
         ctx.drawImage(img, 0, 0);
 
-        // Берем цвет сверху и снизу изображения
-        const topColorData = ctx.getImageData(0, 0, 1, 1).data;
-        const bottomColorData = ctx.getImageData(0, img.height - 1, 1, 1).data;
+        // Функция для получения среднего цвета области изображения
+        function getAverageColor(y, height) {
+            const imageData = ctx.getImageData(0, y, img.width, height).data;
+            let r = 0, g = 0, b = 0;
 
-        const topColor = `rgb(${topColorData[0]}, ${topColorData[1]}, ${topColorData[2]})`;
-        const bottomColor = `rgb(${bottomColorData[0]}, ${bottomColorData[1]}, ${bottomColorData[2]})`;
+            for (let i = 0; i < imageData.length; i += 4) {
+                r += imageData[i];
+                g += imageData[i + 1];
+                b += imageData[i + 2];
+            }
 
-        // Создаем градиент от верхнего цвета к нижнему
+            r = Math.floor(r / (imageData.length / 4));
+            g = Math.floor(g / (imageData.length / 4));
+            b = Math.floor(b / (imageData.length / 4));
+
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        // Получаем цвета с верхней и нижней части изображения
+        const topColor = getAverageColor(0, 10); // Верхняя часть
+        const bottomColor = getAverageColor(img.height - 10, 10); // Нижняя часть
+
+        // Создаем плавный градиент
         const gradient = `linear-gradient(to bottom, ${topColor}, ${bottomColor})`;
 
         // Устанавливаем фон контейнера с изображением и градиентом
         document.getElementById('container').style.background = `
-        url('fon.png') center center no-repeat,
+            url('fon.png') center center no-repeat,
             ${gradient}
         `;
         document.getElementById('container').style.backgroundSize = 'auto, contain';
@@ -68,4 +83,5 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Failed to load image');
     };
 });
+
 
