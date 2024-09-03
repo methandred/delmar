@@ -12,11 +12,11 @@ body {
 
 .container {
     width: 100%;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 0 auto;
+    height: 100vh; /* Заполняет весь экран */
+    background-size: auto; /* Оригинальный размер изображения */
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Без повторения изображения */
+    background-color: #ffffff; /* Резервный цвет на случай, если скрипт не загрузится */
 }
 
 
