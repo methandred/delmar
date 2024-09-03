@@ -36,23 +36,29 @@ fetchRates();
 
 document.addEventListener('DOMContentLoaded', function () {
     const img = new Image();
-    img.src = 'fon.png'; // Путь к вашему изображению
-    img.crossOrigin = 'Anonymous'; // Позволяет загружать изображения с других доменов
+    img.src = 'fon.png'; // Убедитесь, что этот путь правильный
+    img.crossOrigin = 'Anonymous';
 
     img.onload = function () {
         const colorThief = new ColorThief();
-        const dominantColor = colorThief.getColor(img); // Получаем доминирующий цвет
-        const palette = colorThief.getPalette(img, 2); // Получаем палитру дополнительных цветов
+        const palette = colorThief.getPalette(img, 12); // Получаем палитру с 12 цветами
 
-        // Создаем градиент на основе полученных цветов
-        const color1 = `rgb(${dominantColor.join(',')})`;
-        const color2 = `rgb(${palette[1].join(',')})`;
+        // Используем 12 цветов для создания градиента
+        const gradientColors = palette.map(color => `rgb(${color.join(',')})`);
+
+        // Создаем градиент с множеством цветовых переходов
+        const gradient = `linear-gradient(to bottom, ${gradientColors.join(', ')})`;
 
         // Устанавливаем фон контейнера с изображением и градиентом
         document.getElementById('container').style.background = `
-        url('fon.png') center center no-repeat,
-            linear-gradient(to bottom, ${color1}, ${color2})
+            ${gradient},
+            url('fon.png') center center no-repeat
         `;
         document.getElementById('container').style.backgroundSize = 'auto, cover';
     };
+
+    img.onerror = function() {
+        console.log('Failed to load image');
+    };
 });
+
