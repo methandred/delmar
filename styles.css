@@ -53,7 +53,7 @@ header {
 .currency-list {
     padding: 20px;
     flex: 1;
-    background: linear-gradient(to bottom, #696969, #333333); /* Градиент для основного содержимого */
+    background: linear-gradient(to bottom, #171616, #0f0f0f); /* Градиент для основного содержимого */
     color: #fff;
 }
 
