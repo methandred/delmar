@@ -7,14 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container" style="
-    background: 
-        linear-gradient(to bottom, #454545, #2B2B2B, #353535), /* Сначала задаем градиент */
-        url('fon.png') center center no-repeat;               /* Затем добавляем изображение */
-    background-size: cover, auto; /* Градиент будет покрывать весь контейнер, а изображение — в своем размере */
-    width: 100%;
-    height: 100vh;
-">    <header>
+<div class="container" id="container">
+    <header>
             <div class="exchange-name">Delmar LUX</div>
             <div class="qr-code">
                 <img src="qr-placeholder.png" alt="QR Code" />
@@ -67,6 +61,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script> <!-- Подключаем ColorThief -->
     <script src="script.js"></script>
 </body>
 </html>
