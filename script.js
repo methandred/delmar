@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Устанавливаем фон для контейнера
         document.getElementById('container').style.background = `
-           url('image.png') center center no-repeat, ${leftGradient}, ${rightGradient}
+           url('fon.png') center center no-repeat, ${leftGradient}, ${rightGradient}
         `;
         document.getElementById('container').style.backgroundSize = 'auto, contain';
         document.getElementById('container').style.backgroundBlendMode = 'normal';
