@@ -17,7 +17,6 @@ body {
     background-repeat: no-repeat;
     background-color: #ffffff;
     filter: blur(30%); /* Размытие на 30% */
-    background-image: url('fon.png');
 }
 
 header {
