@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Устанавливаем фон контейнера с изображением и градиентом
         document.getElementById('container').style.background = `
-            ${gradient},
-            url('fon.png') center center no-repeat
+        url('fon.png') center center no-repeat,
+            ${gradient}
         `;
         document.getElementById('container').style.backgroundSize = 'auto, contain';
     };
