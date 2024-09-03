@@ -37,7 +37,7 @@ fetchRates();
 document.addEventListener('DOMContentLoaded', function () {
     const img = new Image();
     img.src = 'fon.png'; // Убедитесь, что путь к вашему изображению правильный
-    img.crossOrigin = 'Anonymous'; 
+    img.crossOrigin = 'Anonymous';
 
     img.onload = function () {
         const canvas = document.createElement('canvas');
@@ -46,44 +46,32 @@ document.addEventListener('DOMContentLoaded', function () {
         canvas.height = img.height;
         ctx.drawImage(img, 0, 0);
 
-        const sections = 10; // Разбиваем изображение на 10 секций по высоте для анализа цветов
-        const gradientColors = [];
+        const leftColors = [];
+        const rightColors = [];
 
-        for (let i = 0; i < sections; i++) {
-            const sectionHeight = img.height / sections;
-            const yPosition = i * sectionHeight;
-            const imageData = ctx.getImageData(0, yPosition, img.width, sectionHeight).data;
+        for (let y = 0; y < img.height; y++) {
+            const leftPixel = ctx.getImageData(0, y, 1, 1).data;
+            const rightPixel = ctx.getImageData(img.width - 1, y, 1, 1).data;
 
-            let r = 0, g = 0, b = 0;
-            const pixelCount = imageData.length / 4;
-
-            for (let j = 0; j < imageData.length; j += 4) {
-                r += imageData[j];
-                g += imageData[j + 1];
-                b += imageData[j + 2];
-            }
-
-            r = Math.floor(r / pixelCount);
-            g = Math.floor(g / pixelCount);
-            b = Math.floor(b / pixelCount);
-
-            gradientColors.push(`rgb(${r}, ${g}, ${b})`);
+            leftColors.push(`rgb(${leftPixel[0]}, ${leftPixel[1]}, ${leftPixel[2]})`);
+            rightColors.push(`rgb(${rightPixel[0]}, ${rightPixel[1]}, ${rightPixel[2]})`);
         }
 
-        // Создаем градиент на основе цветов из всех секций
-        const gradient = `linear-gradient(to bottom, ${gradientColors.join(', ')})`;
+        // Создаем градиент, который продлевает цвета с левого и правого краев
+        const leftGradient = leftColors.join(', ');
+        const rightGradient = rightColors.join(', ');
 
-        // Устанавливаем фон контейнера с изображением и градиентом
         document.getElementById('container').style.background = `
         url('fon.png') center center no-repeat,
-            ${gradient}
+            linear-gradient(to right, ${leftGradient}),
+            linear-gradient(to left, ${rightGradient})
         `;
         document.getElementById('container').style.backgroundSize = 'auto, contain';
+        document.getElementById('container').style.backgroundBlendMode = 'normal';
     };
 
     img.onerror = function() {
         console.log('Failed to load image');
     };
 });
-
 
