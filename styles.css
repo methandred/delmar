@@ -15,8 +15,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #ffffff;
-    filter: blur(30%); /* Размытие на 30% */
 }
 
 header {
