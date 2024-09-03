@@ -50,27 +50,28 @@ document.addEventListener('DOMContentLoaded', function () {
         const rightColors = [];
 
         for (let y = 0; y < img.height; y++) {
+            // Получаем цветовые данные для каждого пикселя по левому и правому краю
             const leftPixel = ctx.getImageData(0, y, 1, 1).data;
             const rightPixel = ctx.getImageData(img.width - 1, y, 1, 1).data;
 
+            // Преобразуем данные в формат RGB
             leftColors.push(`rgb(${leftPixel[0]}, ${leftPixel[1]}, ${leftPixel[2]})`);
             rightColors.push(`rgb(${rightPixel[0]}, ${rightPixel[1]}, ${rightPixel[2]})`);
         }
 
-        // Создаем градиент, который продлевает цвета с левого и правого краев
-        const leftGradient = leftColors.join(', ');
-        const rightGradient = rightColors.join(', ');
+        // Создаем плавный градиент на основе полученных данных
+        const leftGradient = `linear-gradient(to right, ${leftColors.join(', ')})`;
+        const rightGradient = `linear-gradient(to left, ${rightColors.join(', ')})`;
 
+        // Устанавливаем фон для контейнера
         document.getElementById('container').style.background = `
-        url('fon.png') center center no-repeat,
-            linear-gradient(to right, ${leftGradient}),
-            linear-gradient(to left, ${rightGradient})
+           url('fon.png') center center no-repeat, ${leftGradient}, ${rightGradient}
         `;
         document.getElementById('container').style.backgroundSize = 'auto, contain';
         document.getElementById('container').style.backgroundBlendMode = 'normal';
     };
 
-    img.onerror = function() {
+    img.onerror = function () {
         console.log('Failed to load image');
     };
 });
