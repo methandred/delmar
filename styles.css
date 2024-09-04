@@ -28,11 +28,6 @@ header {
     position: relative;
 }
 
-.separator {
-    height: 5px;
-    background-color: #DAA520;
-}
-
 .qr-code img {
     width: 150px;
     height: 150px;
@@ -45,24 +40,15 @@ header {
 
 .header-buy-sell {
     display: flex;
+    justify-content: space-between;
+    width: 150px;
+    text-align: center;
+}
+
+.column-header {
+    display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-}
-
-.buy-sell-title {
-    display: flex;
-    justify-content: space-between;
-    font-size: 2rem;
-    margin-bottom: 5px;
-    gap: 40px;
-}
-
-.buy-sell-subtitle {
-    display: flex;
-    justify-content: space-between;
     font-size: 1.5rem;
-    gap: 40px;
 }
 
 .currency-list {
@@ -98,19 +84,14 @@ header {
     width: 75px;
 }
 
+.single-column {
+    justify-content: center;
+    width: 100%;
+}
+
 .cross-rate-label, .crypto-label {
     margin: 10px 0 25px;
     font-size: 2rem;
     text-align: center;
     font-weight: bold;
-}
-
-.cross-center {
-    justify-content: center;
-    width: 100%;
-}
-
-.cross-rate, .btc-rate {
-    text-align: center;
-    width: 100%;
 }
