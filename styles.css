@@ -1,3 +1,4 @@
+/* Основные стили */
 body {
     font-family: 'DejaVu Sans Mono', monospace;
     background-color: #f4f4f4;
@@ -28,20 +29,49 @@ header {
     position: relative;
 }
 
-.qr-code img {
+/* Размеры для больших экранов (например, 27 дюймов) */
+.qr-code img, .logo img {
     width: 150px;
     height: 150px;
 }
 
-.logo img {
-    width: 150px;
-    height: 150px;
+/* Размеры для средних экранов (например, 24 дюйма) */
+@media (max-width: 1920px) {
+    .qr-code img, .logo img {
+        width: 120px;
+        height: 120px;
+    }
 }
 
+/* Размеры для экранов ноутбуков (например, 15-17 дюймов) */
+@media (max-width: 1440px) {
+    .qr-code img, .logo img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Размеры для планшетов и небольших экранов (например, 10-13 дюймов) */
+@media (max-width: 1024px) {
+    .qr-code img, .logo img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Размеры для смартфонов (например, 5-7 дюймов) */
+@media (max-width: 768px) {
+    .qr-code img, .logo img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Другие стили */
 .header-buy-sell {
     display: flex;
     justify-content: space-between;
-    width: 240px; /* Увеличено расстояние между колонками */
+    width: 240px;
     text-align: center;
 }
 
@@ -58,15 +88,14 @@ header {
     color: #fff;
 }
 
-/* Новые стили для кнопок с черным фоном */
 .currency-item, .cross-rate-label, .crypto-label {
-    background: #000; /* Черный фон */
-    border: 1px solid #333; /* Темно-серый бордер для лучшего контраста */
+    background: #000;
+    border: 1px solid #333;
     border-radius: 15px;
     padding: 10px 20px;
     margin-bottom: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    color: #fff; /* Белый текст */
+    color: #fff;
 }
 
 .currency-item {
@@ -79,8 +108,8 @@ header {
     font-size: 2rem;
     flex: 1;
     text-align: left;
-    color: #
 }
+
 .currency-rate {
     display: flex;
     justify-content: space-between;
@@ -91,7 +120,7 @@ header {
 
 .currency-rate span {
     text-align: center;
-    width: 100px; /* Ширина отдельных колонок */
+    width: 100px;
 }
 
 .cross-rate-label, .crypto-label {
@@ -102,7 +131,7 @@ header {
 }
 
 .currency-item .cross-rate, .currency-item .btc-rate {
-    width: 100px; /* Центровка в пределах правого столбца */
-    margin: 0 60px; /* Сдвиг значения к центру правого столбца */
+    width: 100px;
+    margin: 0 60px;
     text-align: center;
 }
