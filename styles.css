@@ -49,6 +49,12 @@ header {
 .buy-sell {
     font-size: 2rem;
 }
+.buy {
+    font-size: 2rem;
+}
+.sell {
+    font-size: 2rem;
+}
 
 .currency-list {
     padding: 20px;
