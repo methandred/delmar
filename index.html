@@ -9,58 +9,40 @@
 <body>
 <div class="container" id="container">
     <header>
-        <div class="logo">
-            <img src="newlogo.png" alt="logo" />
+                <div class="logo">
+<img src="newlogo.png" alt="logo" />
         </div>
         <div class="qr-code">
             <img src="qr-code.png" alt="QR Code" />
         </div>
-        <div class="buy-sell-container">
-            <div class="buy">
-                <span>Купівля<br>Buy</span>
-            </div>
-            <div class="separator"></div>
-            <div class="sell">
-                <span>Продаж<br>Sell</span>
-            </div>
+        <div class="buy">
+            <span>Купівля<br>Buy</span>
+        </div>
+        <div class="sell">
+             <span>Продаж<br>Sell</span>
         </div>
     </header>
 
     <div class="currency-list">
-        <div class="columns">
-            <div class="column buy-column">
-                <div class="currency-item">
-                    <div class="currency-name">&#36; USD</div>
-                    <div class="currency-rate">
-                        <span class="buy-rate" id="usd-buy">41.30</span>
-                    </div>
-                </div>
-                <div class="currency-item">
-                    <div class="currency-name">&euro; EUR</div>
-                    <div class="currency-rate">
-                        <span class="buy-rate" id="eur-buy">45.70</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column sell-column">
-                <div class="currency-item">
-                    <div class="currency-rate">
-                        <span class="sell-rate" id="usd-sell">41.45</span>
-                    </div>
-                </div>
-                <div class="currency-item">
-                    <div class="currency-rate">
-                        <span class="sell-rate" id="eur-sell">45.85</span>
-                    </div>
-                </div>
+                <div class="cross-rate-label">Курс валют/Currency</div>
+        <div class="currency-item">
+            <div class="currency-name">&#36; USD</div>
+            <div class="currency-rate">
+                <span class="buy-rate" id="usd-buy">41.30</span>
+                <span class="sell-rate" id="usd-sell">41.45</span>
             </div>
         </div>
-
+        <div class="currency-item">
+            <div class="currency-name">&euro; EUR</div>
+            <div class="currency-rate">
+                <span class="buy-rate" id="eur-buy">45.70</span>
+                <span class="sell-rate" id="eur-sell">45.85</span>
+            </div>
+        </div>
         <div class="cross-rate-label">Крос курс/Cross currency</div>
         <div class="currency-item">
             <div class="currency-name">&#36;-&euro; USD/EUR</div>
-            <div class="currency-rate">
+                        <div class="currency-rate">
                 <span class="cross-rate" id="usd-eur">1.110</span>
             </div>
         </div>
