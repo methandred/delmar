@@ -62,8 +62,8 @@ header {
 /* Размеры для смартфонов (например, 5-7 дюймов) */
 @media (max-width: 768px) {
     .qr-code img, .logo img {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 }
 
