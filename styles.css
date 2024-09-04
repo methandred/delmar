@@ -6,19 +6,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Мінімальна висота екрану для забезпечення повної висоти */
+    min-height: 100vh; /* Мінімальна висота екрану */
 }
 
 .container {
-    width: 100%; /* Ширина 100%, щоб заповнювати весь екран */
-    max-width: none; /* Зняття максимального обмеження ширини */
+    width: 100%;
+    max-width: none;
     background: linear-gradient(to bottom, #171616, #0f0f0f);
     display: flex;
     flex-direction: column;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
-    margin: 0; /* Зняття відступів */
-    box-sizing: border-box; /* Включення padding в загальний розмір */
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 100vh; /* Розтягування на всю висоту екрану */
 }
 
 header {
@@ -30,105 +31,64 @@ header {
     color: #fff;
     position: relative;
     width: 100%;
-    box-sizing: border-box; /* Включення padding в загальний розмір */
+    box-sizing: border-box;
 }
 
-.qr-code img, .logo img {
-    width: 100px; /* Встановлено фіксовану ширину */
-    height: auto; /* Автоматичне визначення висоти для збереження пропорцій */
-    margin: 0 10px;
-}
-
-.header-buy-sell {
+.currency-header {
     display: flex;
-    flex-wrap: wrap; /* Дозволяє елементам переходити на новий рядок при потребі */
     justify-content: space-between;
-    width: 100%;
-    max-width: 300px; /* Максимальна ширина для колонок */
-    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    background-color: #171616;
 }
 
-.column-header {
+.currency-header h2 {
+    margin: 0;
+}
+
+.currency-rates {
     display: flex;
-    flex-direction: column;
-    font-size: 1.5rem; /* Зменшений розмір шрифту для кращої адаптивності */
-    margin: 5px;
-}
-
-.currency-list {
+    justify-content: space-between;
+    background-color: #171616;
+    color: #fff;
     padding: 10px;
-    flex: 1;
-    background: linear-gradient(to bottom, #171616, #0f0f0f);
-    color: #fff;
+    margin-top: 5px;
 }
 
-.currency-item, .cross-rate-label, .crypto-label {
-    background: #000;
-    border: 1px solid #333;
-    border-radius: 15px;
+.currency-rate-item {
+    flex: 1;
+    text-align: center;
+}
+
+.currency-rate-item span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Стиль для колонок Купівля і Продаж */
+.currency-rate-columns {
+    display: flex;
+    justify-content: space-between;
+    background-color: #171616;
     padding: 10px;
-    margin-bottom: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    color: #fff;
 }
 
-.currency-item {
-    display: flex;
-    flex-wrap: wrap; /* Дозволяє елементам переходити на новий рядок при потребі */
-    justify-content: space-between;
-    align-items: center;
-}
-
-.currency-name {
-    font-size: 1.5rem; /* Зменшений розмір шрифту для кращої адаптивності */
+.currency-rate-columns span {
     flex: 1;
-    text-align: left;
-}
-
-.currency-rate {
-    display: flex;
-    flex-wrap: wrap; /* Дозволяє елементам переходити на новий рядок при потребі */
-    justify-content: space-between;
-    width: 100%;
-    max-width: 400px; /* Максимальна ширина для колонки курсів */
-    font-size: 1.5rem; /* Зменшений розмір шрифту для кращої адаптивності */
-    color: #fff;
-}
-
-.currency-rate span {
-    text-align: center;
-    width: 100px;
-}
-
-.cross-rate-label, .crypto-label {
-    font-size: 1.5rem; /* Зменшений розмір шрифту для кращої адаптивності */
-    text-align: center;
-    font-weight: bold;
-}
-
-.currency-item .cross-rate, .currency-item .btc-rate {
-    width: 100%;
-    margin: 10px 0; /* Відступи для краще адаптивності */
     text-align: center;
 }
 
 /* Медіа-запити для адаптивності */
 @media (max-width: 768px) {
-    .header-buy-sell {
+    .currency-header,
+    .currency-rate-columns,
+    .currency-rates {
         flex-direction: column;
         align-items: center;
     }
-
-    .currency-rate {
-        flex-direction: column;
-    }
-
-    .currency-rate span {
-        width: auto; /* Автоматичне визначення ширини для менших екранів */
+    
+    .currency-rate-item, .currency-rate-columns span {
+        width: auto;
         margin: 5px 0;
-    }
-
-    .currency-item, .cross-rate-label, .crypto-label {
-        padding: 5px;
     }
 }
