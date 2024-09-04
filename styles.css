@@ -58,25 +58,35 @@ header {
     color: #fff;
 }
 
+/* Новые стили для кнопок с металлическим эффектом */
+.currency-item, .cross-rate-label, .crypto-label {
+    background: linear-gradient(to bottom, #c0c0c0, #8c8c8c);
+    border: 1px solid #666;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 .currency-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
 }
 
 .currency-name {
     font-size: 2rem;
     flex: 1;
     text-align: left;
+    color: #fff;
 }
 
 .currency-rate {
     display: flex;
     justify-content: space-between;
-    width: 220px; /* Увеличена ширина для более точного выравнивания */
+    width: 220px;
     font-size: 2rem;
+    color: #fff;
 }
 
 .currency-rate span {
@@ -85,10 +95,10 @@ header {
 }
 
 .cross-rate-label, .crypto-label {
-    margin: 10px 0 25px;
     font-size: 2rem;
     text-align: center;
     font-weight: bold;
+    color: #fff;
 }
 
 .currency-item .cross-rate, .currency-item .btc-rate {
