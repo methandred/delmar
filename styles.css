@@ -12,10 +12,10 @@ body {
 .container {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom, #171616, #0f0f0f);
+    background: linear-gradient(to bottom, #171616, #0f0f0f); /* Градиентный фон от светлого к более темному */
     display: flex;
     flex-direction: column;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Легкая внутренняя тень для глубины */
 }
 
 header {
@@ -23,25 +23,18 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(to bottom, #171616, #0f0f0f);
+    background: linear-gradient(to bottom, #171616, #0f0f0f); /* Градиентный фон шапки */
     color: #fff;
     position: relative;
 }
 
-.buy-sell-container {
-    display: flex;
-    align-items: center;
-}
-
 .separator {
-    width: 5px;
-    background-color: #DAA520;
-    margin: 0 10px;
+    height: 5px;
+    background-color: #DAA520; /* Полоска разделителя */
 }
 
-.buy, .sell {
-    font-size: 2rem;
-    text-align: center;
+.exchange-name {
+    font-size: 1.5rem;
 }
 
 .qr-code img {
@@ -53,50 +46,51 @@ header {
     height: 150px;
 }
 
+.buy-sell {
+    font-size: 2rem;
+}
+.buy {
+    font-size: 2rem;
+}
+.sell {
+    font-size: 2rem;
+}
+
 .currency-list {
     padding: 20px;
     flex: 1;
-    background: linear-gradient(to bottom, #171616, #0f0f0f);
+    background: linear-gradient(to bottom, #171616, #0f0f0f); /* Градиент для основного содержимого */
     color: #fff;
-}
-
-.columns {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.buy-column {
-    border-right: 2px solid #DAA520;
-    padding-right: 10px;
-}
-
-.sell-column {
-    padding-left: 10px;
 }
 
 .currency-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
 }
 
+.currency-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
 .currency-name {
-    font-size: 1.5rem;
+    font-size: 2rem;
     flex: 1;
 }
 
 .currency-rate {
     font-size: 2rem;
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+.currency-rate span {
+    margin: 0 5px;
 }
 
 .cross-rate-label, .crypto-label {
