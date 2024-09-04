@@ -47,7 +47,7 @@ header {
 }
 
 .buy-sell {
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
 .currency-list {
@@ -72,12 +72,12 @@ header {
 }
 
 .currency-name {
-    font-size: 1.2rem;
+    font-size: 2rem;
     flex: 1;
 }
 
 .currency-rate {
-    font-size: 1.2rem;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     width: auto;
@@ -89,7 +89,7 @@ header {
 
 .cross-rate-label, .crypto-label {
     margin: 10px 0 25px;
-    font-size: 1.2rem;
+    font-size: 2rem;
     text-align: center;
     font-weight: bold;
 }
