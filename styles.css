@@ -80,3 +80,29 @@ header {
     flex: 1;
     text-align: left;
     color: #
+}
+.currency-rate {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.currency-rate span {
+    text-align: center;
+    width: 100px; /* Ширина отдельных колонок */
+}
+
+.cross-rate-label, .crypto-label {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.currency-item .cross-rate, .currency-item .btc-rate {
+    width: 100px; /* Центровка в пределах правого столбца */
+    margin: 0 60px; /* Сдвиг значения к центру правого столбца */
+    text-align: center;
+}
