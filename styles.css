@@ -41,7 +41,7 @@ header {
 .header-buy-sell {
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 220px; /* Увеличено расстояние между столбцами */
     text-align: center;
 }
 
@@ -75,18 +75,13 @@ header {
 .currency-rate {
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 180px; /* Увеличена ширина для разделения столбцов */
     font-size: 2rem;
 }
 
 .currency-rate span {
     text-align: center;
-    width: 75px;
-}
-
-.single-column {
-    justify-content: center;
-    width: 100%;
+    width: 90px;
 }
 
 .cross-rate-label, .crypto-label {
@@ -94,4 +89,10 @@ header {
     font-size: 2rem;
     text-align: center;
     font-weight: bold;
+}
+
+.currency-item .cross-rate, .currency-item .btc-rate {
+    width: 180px; /* Центровка в пределах правого столбца */
+    margin: 0 auto;
+    text-align: center;
 }
