@@ -10,99 +10,124 @@ body {
 }
 
 .container {
-    width: 100%;
-    height: 100vh;
+    width: 90%; /* Зменшення ширини контейнера для адаптивності */
+    max-width: 1200px; /* Максимальна ширина для великих екрану */
+    height: auto; /* Автоматична висота для адаптивності */
     background: linear-gradient(to bottom, #171616, #0f0f0f);
     display: flex;
     flex-direction: column;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
 }
 
 header {
     display: flex;
+    flex-wrap: wrap; /* Дозволяє елементам переходити на новий рядок */
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     background: linear-gradient(to bottom, #171616, #0f0f0f);
     color: #fff;
     position: relative;
 }
 
-.qr-code img {
-    width: 150px;
-    height: 150px;
-}
-
-.logo img {
-    width: 150px;
-    height: 150px;
+.qr-code img, .logo img {
+    width: 100px; /* Встановлено фіксовану ширину */
+    height: auto; /* Автоматичне визначення висоти для збереження пропорцій */
+    margin: 0 10px;
 }
 
 .header-buy-sell {
     display: flex;
+    flex-wrap: wrap; /* Дозволяє елементам переходити на новий рядок при потребі */
     justify-content: space-between;
-    width: 240px; /* Увеличено расстояние между колонками */
+    width: 100%;
+    max-width: 300px; /* Максимальна ширина для колонок */
     text-align: center;
 }
 
 .column-header {
     display: flex;
     flex-direction: column;
-    font-size: 2rem;
+    font-size: 1.5rem; /* Зменшений розмір шрифту для кращої адаптивності */
+    margin: 5px;
 }
 
 .currency-list {
-    padding: 20px;
+    padding: 10px;
     flex: 1;
     background: linear-gradient(to bottom, #171616, #0f0f0f);
     color: #fff;
 }
 
-/* Новые стили для кнопок с черным фоном */
 .currency-item, .cross-rate-label, .crypto-label {
-    background: #000; /* Черный фон */
-    border: 1px solid #333; /* Темно-серый бордер для лучшего контраста */
+    background: #000;
+    border: 1px solid #333;
     border-radius: 15px;
-    padding: 10px 20px;
+    padding: 10px;
     margin-bottom: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    color: #fff; /* Белый текст */
+    color: #fff;
 }
 
 .currency-item {
     display: flex;
+    flex-wrap: wrap; /* Дозволяє елементам переходити на новий рядок при потребі */
     justify-content: space-between;
     align-items: center;
 }
 
 .currency-name {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Зменшений розмір шрифту для кращої адаптивності */
     flex: 1;
     text-align: left;
-    color: #
 }
+
 .currency-rate {
     display: flex;
+    flex-wrap: wrap; /* Дозволяє елементам переходити на новий рядок при потребі */
     justify-content: space-between;
-    width: 220px;
-    font-size: 2rem;
+    width: 100%;
+    max-width: 400px; /* Максимальна ширина для колонки курсів */
+    font-size: 1.5rem; /* Зменшений розмір шрифту для кращої адаптивності */
     color: #fff;
 }
 
 .currency-rate span {
     text-align: center;
-    width: 100px; /* Ширина отдельных колонок */
+    width: 100px;
 }
 
 .cross-rate-label, .crypto-label {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Зменшений розмір шрифту для кращої адаптивності */
     text-align: center;
     font-weight: bold;
-    color: #fff;
 }
 
 .currency-item .cross-rate, .currency-item .btc-rate {
-    width: 100px; /* Центровка в пределах правого столбца */
-    margin: 0 60px; /* Сдвиг значения к центру правого столбца */
+    width: 100%;
+    margin: 10px 0; /* Відступи для краще адаптивності */
     text-align: center;
+}
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 768px) {
+    .header-buy-sell {
+        flex-direction: column;
+        align-items: center;
+        max-width: none; /* Зняття обмеження ширини */
+    }
+
+    .currency-rate {
+        flex-direction: column;
+    }
+
+    .currency-rate span {
+        width: auto; /* Автоматичне визначення ширини для менших екранів */
+        margin: 5px 0; /* Відступи для менших екранів */
+    }
+
+    .currency-item, .cross-rate-label, .crypto-label {
+        padding: 5px;
+    }
 }
