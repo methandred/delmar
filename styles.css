@@ -39,9 +39,14 @@ header {
     font-size: 2rem;
 }
 
+/* Центровка заголовков */
+.cross-rate-label, .crypto-label {
+    text-align: center; /* Центровка заголовков */
+}
+
 /* Убедитесь, что все текстовые элементы используют относительные единицы */
 .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
-    font-size: 2rem; /* Базовый размер шрифта */
+    font-size: 2rem;
 }
 
 .header-buy-sell {
