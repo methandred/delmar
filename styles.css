@@ -110,26 +110,38 @@ header {
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
         font-size: 1.2rem;
     }
+
     /* Уменьшение ширины контейнеров с курсами */
-    .currency-rate {
-        width: 160px; /* Уменьшение ширины */
+    .currency-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Разбивка на 2 колонки */
+        grid-gap: 10px; /* Добавим отступ между колонками */
     }
-    .currency-rate span {
-        width: 80px; /* Сокращение ширины для значений покупки и продажи */
-    }
-    /* Выровнять кросс-курс и криптовалюты */
+
+    /* Название валют слева, значения справа */
     .currency-item {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        grid-column: span 2; /* Для кросс-курса и криптовалют делаем span */
     }
-    .currency-rate {
-        justify-content: flex-start;
-    }
+
+    /* Выравнивание для кросс-курса и криптовалюты */
     .cross-rate-label, .crypto-label {
-        margin-top: 20px; /* Добавление отступа для разделения секций */
+        grid-column: 1 / -1; /* Растягиваем на две колонки */
+        text-align: center;
     }
-    .currency-item .cross-rate, .currency-item .btc-rate {
-        margin: 0; /* Убираем большой отступ для кросс-курсов и криптовалют */
+
+    /* Значения покупки и продажи */
+    .currency-rate {
+        display: flex;
+        justify-content: space-between;
+        width: 100px; /* Уменьшаем ширину */
+    }
+
+    .currency-rate span {
+        width: 50px; /* Сокращаем ширину значений курса */
+        text-align: center;
     }
 }
 
