@@ -105,10 +105,10 @@ header {
         height: 60px;
     }
     .column-header {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
       /* Применение nowrap для кросс-курсов */
     .currency-item .currency-name {
