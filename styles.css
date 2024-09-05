@@ -77,10 +77,10 @@ header {
         height: 100px;
     }
     .column-header {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -91,10 +91,10 @@ header {
         height: 80px;
     }
     .column-header {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -105,10 +105,10 @@ header {
         height: 60px;
     }
     .column-header {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
