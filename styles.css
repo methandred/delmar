@@ -127,7 +127,7 @@ header {
     }
 
     /* Центровка кросс-курсов и криптовалют */
-    .cross-rate-label, .crypto-label, .currency-item .cross-rate, .currency-item .btc-rate {
+    .currency-item .cross-rate, .currency-item .btc-rate {
         text-align: center;
         width: 100%; /* Охватить всю ширину контейнера */
     }
