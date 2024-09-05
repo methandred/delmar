@@ -110,9 +110,26 @@ header {
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
         font-size: 1.2rem;
     }
-      /* Применение nowrap для кросс-курсов */
-    .currency-item .currency-name {
-        white-space: nowrap; /* Отключение переноса текста */
+    /* Уменьшение ширины контейнеров с курсами */
+    .currency-rate {
+        width: 160px; /* Уменьшение ширины */
+    }
+    .currency-rate span {
+        width: 80px; /* Сокращение ширины для значений покупки и продажи */
+    }
+    /* Выровнять кросс-курс и криптовалюты */
+    .currency-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .currency-rate {
+        justify-content: flex-start;
+    }
+    .cross-rate-label, .crypto-label {
+        margin-top: 20px; /* Добавление отступа для разделения секций */
+    }
+    .currency-item .cross-rate, .currency-item .btc-rate {
+        margin: 0; /* Убираем большой отступ для кросс-курсов и криптовалют */
     }
 }
 
