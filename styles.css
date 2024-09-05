@@ -114,11 +114,6 @@ header {
     .currency-item .currency-name {
         white-space: nowrap; /* Отключение переноса текста */
     }
-    .btc-rate {
-    width: 100px;
-    margin: 20 0px;
-    text-align: center;
-}
 }
 
 
