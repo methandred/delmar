@@ -104,46 +104,15 @@ header {
         width: 60px;
         height: 60px;
     }
-
     .column-header {
         font-size: 0.9rem;
     }
-
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
         font-size: 0.9rem;
     }
-
-    /* Обновленные стили для валют */
-    .currency-rate {
-        display: flex;
-        justify-content: space-between; /* Разместить курс покупки слева, курс продажи справа */
-        gap: 10px; /* Добавить небольшой отступ между столбцами */
-        width: 100%; /* Убедиться, что контейнер занимает всю ширину */
-    }
-
-    .currency-rate span {
-        width: 50%; /* Каждый столбец занимает 50% ширины */
-        text-align: center; /* Центрирование значений */
-    }
-
-    /* Центровка кросс-курсов и криптовалют */
-    .currency-item .cross-rate, .currency-item .btc-rate {
-        text-align: center;
-        width: 100%; /* Охватить всю ширину контейнера */
-    }
-
-    /* Совмещение двух столбцов в один для кросс-курсов и криптовалют */
-    .currency-item .cross-rate, .currency-item .btc-rate {
-        margin: 0 auto; /* Центровка */
-    }
-
-    /* Уменьшение отступов для кросс-курсов и криптовалют */
-    .currency-item {
-        padding: 5px 10px; /* Уменьшение внутреннего отступа */
-    }
-
-    .currency-list {
-        padding: 10px; /* Уменьшение внешнего отступа */
+      /* Применение nowrap для кросс-курсов */
+    .currency-item .currency-name {
+        white-space: nowrap; /* Отключение переноса текста */
     }
 }
 
