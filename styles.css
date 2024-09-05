@@ -110,6 +110,10 @@ header {
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
         font-size: 0.9rem;
     }
+      /* Применение nowrap для кросс-курсов */
+    .currency-item .currency-name {
+        white-space: nowrap; /* Отключение переноса текста */
+    }
 }
 
 /* Другие стили */
