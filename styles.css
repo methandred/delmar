@@ -36,7 +36,19 @@ header {
 }
 
 .column-header {
+    font-size: 2rem;
+}
+
+/* Убедитесь, что все текстовые элементы используют относительные единицы */
+.currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
     font-size: 2rem; /* Базовый размер шрифта */
+}
+
+.header-buy-sell {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    text-align: center;
 }
 
 /* Размеры для средних экранов (например, 24 дюйма) */
@@ -46,10 +58,10 @@ header {
         height: 120px;
     }
     .column-header {
-        font-size: 1.8rem; /* Уменьшение размера шрифта */
+        font-size: 1.8rem;
     }
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
-        font-size: 1.8rem; /* Уменьшение размера шрифта */
+        font-size: 1.8rem;
     }
 }
 
@@ -60,10 +72,10 @@ header {
         height: 100px;
     }
     .column-header {
-        font-size: 1.6rem; /* Уменьшение размера шрифта */
+        font-size: 1.6rem;
     }
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
-        font-size: 1.6rem; /* Уменьшение размера шрифта */
+        font-size: 1.6rem;
     }
 }
 
@@ -74,10 +86,10 @@ header {
         height: 80px;
     }
     .column-header {
-        font-size: 1.4rem; /* Уменьшение размера шрифта */
+        font-size: 1.4rem;
     }
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
-        font-size: 1.4rem; /* Уменьшение размера шрифта */
+        font-size: 1.4rem;
     }
 }
 
@@ -88,21 +100,14 @@ header {
         height: 60px;
     }
     .column-header {
-        font-size: 1.2rem; /* Уменьшение размера шрифта */
+        font-size: 1.2rem;
     }
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
-        font-size: 1.2rem; /* Уменьшение размера шрифта */
+        font-size: 1.2rem;
     }
 }
 
 /* Другие стили */
-.header-buy-sell {
-    display: flex;
-    justify-content: space-between;
-    width: 240px;
-    text-align: center;
-}
-
 .currency-list {
     padding: 20px;
     flex: 1;
@@ -127,7 +132,6 @@ header {
 }
 
 .currency-name {
-    font-size: 2rem; /* Базовый размер шрифта */
     flex: 1;
     text-align: left;
 }
@@ -136,20 +140,12 @@ header {
     display: flex;
     justify-content: space-between;
     width: 220px;
-    font-size: 2rem; /* Базовый размер шрифта */
     color: #fff;
 }
 
 .currency-rate span {
     text-align: center;
     width: 100px;
-}
-
-.cross-rate-label, .crypto-label {
-    font-size: 2rem; /* Базовый размер шрифта */
-    text-align: center;
-    font-weight: bold;
-    color: #fff;
 }
 
 .currency-item .cross-rate, .currency-item .btc-rate {
