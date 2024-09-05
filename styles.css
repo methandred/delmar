@@ -110,9 +110,27 @@ header {
     .currency-name, .currency-rate span, .cross-rate-label, .crypto-label {
         font-size: 0.9rem;
     }
-      /* Применение nowrap для кросс-курсов */
+
+    /* Применение nowrap для кросс-курсов */
     .currency-item .currency-name {
         white-space: nowrap; /* Отключение переноса текста */
+    }
+
+    /* Уменьшение размеров таблицы и смещение правее */
+    .currency-list {
+        padding: 10px; /* Уменьшение внутреннего отступа */
+    }
+    .currency-item {
+        margin-right: 20px; /* Смещение таблицы правее */
+        flex-direction: column; /* Уменьшение размера таблицы */
+    }
+    .currency-rate {
+        width: auto; /* Автоматическая ширина */
+        margin: 5px 0; /* Уменьшение отступов между курсами */
+    }
+    .header-buy-sell {
+        width: auto; /* Автоматическая ширина */
+        text-align: center; /* Центровка текста */
     }
 }
 
