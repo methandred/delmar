@@ -115,7 +115,7 @@ header {
     .currency-list {
         display: grid;
         grid-template-columns: 1fr 1fr; /* Разбивка на 2 колонки */
-        grid-gap: 10px; /* Добавим отступ между колонками */
+        grid-gap: 10px; /* Отступ между колонками */
     }
 
     /* Название валют слева, значения справа */
@@ -124,6 +124,19 @@ header {
         justify-content: space-between;
         align-items: center;
         grid-column: span 2; /* Для кросс-курса и криптовалют делаем span */
+        white-space: nowrap; /* Названия в один ряд */
+    }
+
+    /* Уменьшение отступа между покупкой и продажей */
+    .currency-rate {
+        display: flex;
+        justify-content: space-between;
+        width: 80px; /* Уменьшаем ширину для значений покупки и продажи */
+    }
+
+    .currency-rate span {
+        width: 40px; /* Сужаем ширину колонок значений */
+        text-align: center;
     }
 
     /* Выравнивание для кросс-курса и криптовалюты */
@@ -132,15 +145,9 @@ header {
         text-align: center;
     }
 
-    /* Значения покупки и продажи */
-    .currency-rate {
-        display: flex;
-        justify-content: space-between;
-        width: 100px; /* Уменьшаем ширину */
-    }
-
-    .currency-rate span {
-        width: 50px; /* Сокращаем ширину значений курса */
+    /* Центрирование значений для кросс-курса и криптовалюты */
+    .currency-item .cross-rate, .currency-item .btc-rate {
+        width: 100%; /* Выравнивание значений по ширине */
         text-align: center;
     }
 }
