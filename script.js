@@ -1,35 +1,30 @@
-// Function to update currency rates
-function updateRates(data) {
-    document.getElementById('usd-buy').innerText = data.usdBuy;
-    document.getElementById('usd-sell').innerText = data.usdSell;
-    document.getElementById('eur-buy').innerText = data.eurBuy;
-    document.getElementById('eur-sell').innerText = data.eurSell;
-    document.getElementById('usd-eur').innerText = data.usdEur;
-    document.getElementById('eur-usd').innerText = data.eurUsd;
-    document.getElementById('btc-rate').innerText = data.btcRate;
-}
-
-// Example function to simulate API call
-function fetchRates() {
-    // Simulated API response
-    const apiResponse = {
-        usdBuy: "41.32",
-        usdSell: "41.47",
-        eurBuy: "42.72",
-        eurSell: "45.87",
-        usdEur: "1.112",
-        eurUsd: "1.104",
-        btcRate: "65000"
-    };
+// Функция для получения данных из API и обновления страницы
+async function fetchAndUpdateRates() {
+  try {
+    // Получите данные от API функции
+    const response = await fetch('/.netlify/functions/updateRates');
     
-    // Call update function with new data
-    updateRates(apiResponse);
+    // Проверьте, что запрос прошел успешно
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    // Преобразуйте ответ в JSON
+    const data = await response.json();
+
+    // Обновите элементы на странице
+    document.getElementById('usdBuy').textContent = data.usdBuy || 'N/A';
+    document.getElementById('usdSell').textContent = data.usdSell || 'N/A';
+    document.getElementById('eurBuy').textContent = data.eurBuy || 'N/A';
+    document.getElementById('eurSell').textContent = data.eurSell || 'N/A';
+    document.getElementById('usdEur').textContent = data.usdEur || 'N/A';
+    document.getElementById('eurUsd').textContent = data.eurUsd || 'N/A';
+    document.getElementById('btcRate').textContent = data.btcRate || 'N/A';
+
+  } catch (error) {
+    console.error('Error fetching or updating rates:', error);
+  }
 }
 
-// Fetch rates every 10 seconds (you can change this as needed)
-setInterval(fetchRates, 10000);
-
-// Initial fetch to populate the data immediately
-fetchRates();
-
-// Apply background styles when the DOM is fully loaded
+// Вызовите функцию при загрузке страницы
+document.addEventListener('DOMContentLoaded', fetchAndUpdateRates);
