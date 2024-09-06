@@ -1,13 +1,3 @@
-let exchangeRates = {
-  usdBuy: "41.30",
-  usdSell: "41.45",
-  eurBuy: "45.70",
-  eurSell: "45.85",
-  usdEur: "1.110",
-  eurUsd: "1.103",
-  btcRate: "57551"
-};
-
 exports.handler = async (event, context) => {
   if (event.httpMethod === 'POST') {
     try {
@@ -23,7 +13,7 @@ exports.handler = async (event, context) => {
       }
 
       // Сохранение данных
-      exchangeRates = { usdBuy, usdSell, eurBuy, eurSell, usdEur, eurUsd, btcRate };
+    let  exchangeRates = { usdBuy, usdSell, eurBuy, eurSell, usdEur, eurUsd, btcRate };
 
       return {
         statusCode: 200,
