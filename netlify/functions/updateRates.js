@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
       }
 
       // Сохранение данных
-    let  exchangeRates = { usdBuy, usdSell, eurBuy, eurSell, usdEur, eurUsd, btcRate };
+    let exchangeRates = { usdBuy, usdSell, eurBuy, eurSell, usdEur, eurUsd, btcRate };
 
       return {
         statusCode: 200,
